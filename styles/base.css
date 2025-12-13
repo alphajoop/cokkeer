@@ -1,0 +1,9 @@
+.ln-code {
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.token {
+  font-weight: 500;
+}

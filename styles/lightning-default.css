@@ -1,0 +1,38 @@
+:root {
+  --ln-bg: #ffffff;
+  --ln-text: #0f172a;
+}
+.ln-code {
+  background: var(--ln-bg);
+  color: var(--ln-text);
+  padding: 12px;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 14px;
+  overflow: auto;
+}
+.ln-code .token.keyword {
+  color: #7c3aed;
+}
+.ln-code .token.string {
+  color: #059669;
+}
+.ln-code .token.number {
+  color: #b45309;
+}
+.ln-code .token.comment {
+  color: #6b7280;
+  font-style: italic;
+}
+.ln-code .token.literal {
+  color: #c026d3;
+}
+.ln-code .token.operator {
+  color: #111827;
+}
+.ln-code .token.identifier {
+  color: #0f172a;
+}
+.ln-code .token.punctuation {
+  color: #111827;
+}

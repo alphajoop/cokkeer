@@ -1,0 +1,59 @@
+name: Code Quality & Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    name: Quality, Build & Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      # 2️⃣ Setup Bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: bun install
+
+      # 4️⃣ Clean dist
+      - name: Clean dist folder
+        run: bun run clean
+
+      # 5️⃣ Build TypeScript & bundle
+      - name: Build library
+        run: bun run build
+
+      # 6️⃣ Setup Biome
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+
+      # 7️⃣ Format check
+      - name: Format code
+        run: bun run format
+
+      # 8️⃣ Lint check
+      - name: Lint code
+        run: bun run lint
+
+      # 9️⃣ Type check / static analysis
+      - name: Check code
+        run: bun run check
+
+      # 🔟 Run tests
+      - name: Run tests
+        run: bun test
