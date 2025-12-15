@@ -1,13 +1,8 @@
-export type Theme = Record<string, string>;
-
 import { dracula } from "../themes/dracula";
 import { monokai } from "../themes/monokai";
+import type { Theme, ThemeName } from "./types";
 
-export const themeNames = ["lightning-default", "dracula", "monokai"] as const;
-
-export type ThemeName = (typeof themeNames)[number];
-
-export const themes = {
+export const themes: Record<ThemeName, Theme> = {
   "lightning-default": {
     background: "#ffffff",
     text: "#0f172a",
@@ -23,16 +18,15 @@ export const themes = {
   },
   dracula,
   monokai,
-} as const;
+};
 
 let _currentTheme: Theme = themes["lightning-default"];
 
 export function setTheme(name: ThemeName): void {
-  // name est typé ThemeName, donc themes[name] est sûr
   _currentTheme = themes[name];
 }
 
 export function getCurrentTheme(themeName?: ThemeName): Theme {
-  if (themeName) return themes[themeName];
-  return _currentTheme;
+  return themeName ? themes[themeName] : _currentTheme;
 }
+

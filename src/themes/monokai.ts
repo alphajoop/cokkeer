@@ -1,4 +1,4 @@
-import type { Theme } from "../core/themes";
+import type { Theme } from "../core/types";
 
 export const monokai: Theme = {
   background: "#272822",

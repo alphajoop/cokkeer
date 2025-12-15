@@ -1,4 +1,5 @@
-import type { Theme } from "../core/themes";
+import type { Theme } from "../core/types";
+
 
 export const dracula: Theme = {
   background: "#282a36",
