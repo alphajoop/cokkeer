@@ -1,14 +1,18 @@
 import { describe, expect, it } from "bun:test";
-import { getCurrentTheme, setTheme, type ThemeName, themeNames, themes } from "../src/core/themes";
+import { getCurrentTheme, setTheme, themes } from "../src/core/themes";
+import type { ThemeName, ThemeTokenKey } from "../src/core/types";
 
 describe("themes module", () => {
   it("should have all defined theme names", () => {
-    expect(themeNames).toEqual(expect.arrayContaining(["lightning-default", "dracula", "monokai"]));
+    expect(Object.keys(themes) as ThemeName[]).toEqual(
+      expect.arrayContaining(["lightning-default", "dracula", "monokai"])
+    );
   });
 
-  it("themes object should contain correct keys", () => {
-    for (const name of themeNames) {
-      expect(themes[name as ThemeName]).toBeDefined();
+  it("themes object should contain all theme keys", () => {
+    for (const name of Object.keys(themes) as ThemeName[]) {
+      const theme = themes[name as ThemeName];
+      expect(theme).toBeDefined();
     }
   });
 
@@ -28,18 +32,28 @@ describe("themes module", () => {
     expect(getCurrentTheme()).toEqual(themes["lightning-default"]);
   });
 
-  it("every theme has required color properties", () => {
-    for (const name of themeNames) {
+  it("every theme has all required color properties", () => {
+    const requiredKeys: ThemeTokenKey[] = [
+      "background",
+      "text",
+      "keyword",
+      "string",
+      "number",
+      "comment",
+      "literal",
+      "operator",
+      "identifier",
+      "punctuation",
+      "type",
+    ];
+
+    for (const name of Object.keys(themes) as ThemeName[]) {
       const theme = themes[name as ThemeName];
-      expect(theme.background).toBeDefined();
-      expect(theme.text).toBeDefined();
-      expect(theme.keyword).toBeDefined();
-      expect(theme.string).toBeDefined();
-      expect(theme.number).toBeDefined();
-      expect(theme.comment).toBeDefined();
-      expect(theme.operator).toBeDefined();
-      expect(theme.identifier).toBeDefined();
-      expect(theme.punctuation).toBeDefined();
+
+      for (const key of requiredKeys) {
+        expect(theme[key]).toBeDefined();
+        expect(typeof theme[key]).toBe("string");
+      }
     }
   });
 });

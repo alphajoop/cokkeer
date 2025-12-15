@@ -16,9 +16,10 @@
     "esModuleInterop": true,
 
     // Bundler mode
-    "moduleResolution": "node",
-    "verbatimModuleSyntax": true,
-    "emitDeclarationOnly": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": false,
 
     // Best practices
     "strict": true,
@@ -26,11 +27,14 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
 
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
 }
