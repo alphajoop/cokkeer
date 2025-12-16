@@ -1,8 +1,6 @@
-import type { Theme } from "../core/types";
+import type { ThemeColors } from "../core/types";
 
-export const dracula: Theme = {
-  fontFamily:
-    "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
+export const dracula: ThemeColors = {
   background: "#282a36",
   text: "#f8f8f2",
   keyword: "#ff79c6",
@@ -14,6 +12,4 @@ export const dracula: Theme = {
   identifier: "#50fa7b",
   punctuation: "#f8f8f2",
   type: "#8be9fd",
-  padding: "12px",
-  borderRadius: "8px",
 };

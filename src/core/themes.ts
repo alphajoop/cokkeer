@@ -1,27 +1,35 @@
 import { dracula } from "../themes/dracula";
+import { lightningDefault } from "../themes/lightning-default";
 import { monokai } from "../themes/monokai";
-import type { Theme, ThemeName } from "./types";
+import type { Theme, ThemeColors, ThemeName } from "./types";
 
+/**
+ * Common layout properties for all themes
+ */
+const commonThemeLayout: Pick<Theme, "fontFamily" | "padding" | "borderRadius"> = {
+  fontFamily:
+    "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
+  padding: "1rem",
+  borderRadius: "8px",
+};
+
+/**
+ * Merge theme colors with common layout properties
+ */
+function createTheme(colors: ThemeColors): Theme {
+  return {
+    ...colors,
+    ...commonThemeLayout,
+  };
+}
+
+/**
+ * All available themes with common layout applied
+ */
 export const themes: Record<ThemeName, Theme> = {
-  "lightning-default": {
-    fontFamily:
-      "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
-    background: "#ffffff",
-    text: "#0f172a",
-    keyword: "#7c3aed",
-    string: "#059669",
-    number: "#b45309",
-    comment: "#6b7280",
-    literal: "#c026d3",
-    operator: "#111827",
-    identifier: "#0f172a",
-    punctuation: "#111827",
-    type: "#0ea5e9",
-    padding: "12px",
-    borderRadius: "8px",
-  },
-  dracula,
-  monokai,
+  "lightning-default": createTheme(lightningDefault),
+  dracula: createTheme(dracula),
+  monokai: createTheme(monokai),
 };
 
 let _currentTheme: Theme = themes["lightning-default"];

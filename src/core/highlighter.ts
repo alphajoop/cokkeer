@@ -45,6 +45,8 @@ export function highlight(code: string, lang: LanguageName = "js", themeName?: T
     theme.fontFamily ? `font-family:${theme.fontFamily}` : "",
     "overflow-x:auto",
     "font-size:14px",
+    "line-height:1.5",
+    "margin:1rem 0",
   ]
     .filter(Boolean)
     .join(";");

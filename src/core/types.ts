@@ -29,7 +29,15 @@ export type ThemeTokenKey =
   | "punctuation"
   | "type";
 
-export type Theme = Record<ThemeTokenKey, string> & {
+/**
+ * Theme colors only (without layout properties)
+ */
+export type ThemeColors = Record<ThemeTokenKey, string>;
+
+/**
+ * Complete theme with colors and optional layout properties
+ */
+export type Theme = ThemeColors & {
   padding?: string;
   borderRadius?: string;
   fontFamily?: string;
