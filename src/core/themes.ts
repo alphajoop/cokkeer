@@ -4,6 +4,8 @@ import type { Theme, ThemeName } from "./types";
 
 export const themes: Record<ThemeName, Theme> = {
   "lightning-default": {
+    fontFamily:
+      "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace",
     background: "#ffffff",
     text: "#0f172a",
     keyword: "#7c3aed",
@@ -15,6 +17,8 @@ export const themes: Record<ThemeName, Theme> = {
     identifier: "#0f172a",
     punctuation: "#111827",
     type: "#0ea5e9",
+    padding: "12px",
+    borderRadius: "8px",
   },
   dracula,
   monokai,
@@ -29,4 +33,3 @@ export function setTheme(name: ThemeName): void {
 export function getCurrentTheme(themeName?: ThemeName): Theme {
   return themeName ? themes[themeName] : _currentTheme;
 }
-

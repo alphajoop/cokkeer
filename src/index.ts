@@ -1,6 +1,3 @@
-export { getThemeCss, highlight, highlightBlock } from "./core/highlighter";
-export type { 
-  LanguageName, 
-  Theme,
-  ThemeName
-} from "./core/types";
+export { highlight, highlightBlock } from "./core/highlighter";
+export { getCurrentTheme } from "./core/themes";
+export type { LanguageName, Theme, ThemeName } from "./core/types";
