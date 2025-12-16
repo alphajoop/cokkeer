@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0](https://github.com/alphajoop/cokkeer/compare/v1.1.0...v1.2.0) (2025-12-16)
+
+### Features
+
+* **renderer:** inline styles into generated HTML and remove CSS dependency ([013cfd4](https://github.com/alphajoop/cokkeer/commit/013cfd4c5941831249116664992d330aac23ab2c))
+
 ## [1.1.0](https://github.com/alphajoop/cokkeer/compare/v1.0.0...v1.1.0) (2025-12-15)
 
 ### Features
