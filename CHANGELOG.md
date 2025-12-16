@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.1](https://github.com/alphajoop/cokkeer/compare/v1.2.0...v1.2.1) (2025-12-16)
+
+### Bug Fixes
+
+* **theme:** adjust theme layout logic ([46d4742](https://github.com/alphajoop/cokkeer/commit/46d47425b3dbe8525d9eea0aa74105a059e71bcf))
+
 ## [1.2.0](https://github.com/alphajoop/cokkeer/compare/v1.1.0...v1.2.0) (2025-12-16)
 
 ### Features
