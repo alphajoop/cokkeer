@@ -5,13 +5,7 @@ export type TokenPattern = { type: string; regex: RegExp };
  * Supported programming languages
  * @example "js" | "javascript" | "ts" | "typescript" | "py" | "python"
  */
-export type LanguageName =
-  | "js"
-  | "javascript"
-  | "ts"
-  | "typescript"
-  | "py"
-  | "python";
+export type LanguageName = "js" | "javascript" | "ts" | "typescript" | "py" | "python";
 
 /**
  * Available theme names

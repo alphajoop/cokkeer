@@ -18,11 +18,7 @@ function escapeHtml(s: string) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-export function highlight(
-  code: string,
-  lang: LanguageName = "js",
-  themeName?: ThemeName
-): string {
+export function highlight(code: string, lang: LanguageName = "js", themeName?: ThemeName): string {
   const patterns = langMap[lang];
   const tokens = tokenize(code, patterns);
   const theme = getCurrentTheme(themeName);

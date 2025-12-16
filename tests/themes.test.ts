@@ -5,7 +5,7 @@ import type { ThemeName, ThemeTokenKey } from "../src/core/types";
 describe("themes module", () => {
   it("should have all defined theme names", () => {
     expect(Object.keys(themes) as ThemeName[]).toEqual(
-      expect.arrayContaining(["lightning-default", "dracula", "monokai"])
+      expect.arrayContaining(["lightning-default", "dracula", "monokai"]),
     );
   });
 

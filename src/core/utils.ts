@@ -1,7 +1,6 @@
 import { getCurrentTheme, setTheme } from "./themes";
 import type { ThemeName } from "./types";
 
-
 export function getThemeCss(themeName: ThemeName = "lightning-default"): string {
   if (themeName) {
     setTheme(themeName);
