@@ -4,7 +4,6 @@ import { typescriptPatterns } from "../languages/typescript";
 import { getCurrentTheme } from "./themes";
 import { tokenize } from "./tokenizer";
 import type { LanguageName, ThemeName, ThemeTokenKey } from "./types";
-import { getThemeCss } from "./utils";
 
 const langMap = {
   js: javascriptPatterns,
@@ -42,11 +41,19 @@ export function highlight(
     }
   }
 
-  return `
-<pre class="ln-code" style="background:${theme.background};color:${theme.text}">
-<code>${html}</code>
-</pre>
-`;
+  const preStyle = [
+    `background:${theme.background}`,
+    `color:${theme.text}`,
+    theme.padding ? `padding:${theme.padding}` : "",
+    theme.borderRadius ? `border-radius:${theme.borderRadius}` : "",
+    theme.fontFamily ? `font-family:${theme.fontFamily}` : "",
+    "overflow-x:auto",
+    "font-size:14px",
+  ]
+    .filter(Boolean)
+    .join(";");
+
+  return `<pre class="ln-code" style="${preStyle}"><code>${html}</code></pre>`;
 }
 
 export function highlightBlock(el: Element, themeName?: ThemeName) {
@@ -54,5 +61,3 @@ export function highlightBlock(el: Element, themeName?: ThemeName) {
   const html = highlight(code, "js", themeName);
   el.innerHTML = html;
 }
-
-export { getThemeCss };

@@ -7,9 +7,13 @@
   color: var(--ln-text);
   padding: 12px;
   border-radius: 8px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Courier New", monospace;
   font-size: 14px;
-  overflow: auto;
+  overflow-x: auto;
+}
+.ln-code .token {
+  font-weight: 500;
 }
 .ln-code .token.keyword {
   color: #ff79c6;

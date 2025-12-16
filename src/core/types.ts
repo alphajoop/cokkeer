@@ -5,7 +5,13 @@ export type TokenPattern = { type: string; regex: RegExp };
  * Supported programming languages
  * @example "js" | "javascript" | "ts" | "typescript" | "py" | "python"
  */
-export type LanguageName = "js" | "javascript" | "ts" | "typescript" | "py" | "python";
+export type LanguageName =
+  | "js"
+  | "javascript"
+  | "ts"
+  | "typescript"
+  | "py"
+  | "python";
 
 /**
  * Available theme names
@@ -29,4 +35,8 @@ export type ThemeTokenKey =
   | "punctuation"
   | "type";
 
-export type Theme = Record<ThemeTokenKey, string>;
+export type Theme = Record<ThemeTokenKey, string> & {
+  padding?: string;
+  borderRadius?: string;
+  fontFamily?: string;
+};
