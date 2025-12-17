@@ -1,0 +1,62 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    "group:recommended",
+    "helpers:pinGitHubActionDigests",
+    "npm:unpublishSafe"
+  ],
+
+  "timezone": "Africa/Dakar",
+
+  "schedule": ["before 6am on monday"],
+
+  "dependencyDashboard": true,
+
+  "dependencyDashboardTitle": "📦 Dependency Updates Dashboard",
+
+  "rangeStrategy": "replace",
+
+  "labels": ["dependencies"],
+
+  "rebaseWhen": "conflicted",
+
+  "commitMessagePrefix": "chore(deps):",
+
+  "commitMessageTopic": "{{depName}}",
+
+  "ignoreDeps": ["typescript"],
+
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "dev dependencies",
+      "automerge": false
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "groupName": "production dependencies",
+      "automerge": false
+    },
+    {
+      "matchPackagePatterns": ["^@semantic-release"],
+      "groupName": "semantic-release ecosystem"
+    },
+    {
+      "matchPackagePatterns": ["^@biomejs"],
+      "groupName": "biome tooling"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    }
+  ],
+
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "commitMessageSuffix": "[security]"
+  }
+}

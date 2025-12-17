@@ -1,0 +1,36 @@
+version: 2
+
+updates:
+  # 📦 NPM / Bun dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "Africa/Dakar"
+
+    open-pull-requests-limit: 5
+
+    labels:
+      - "dependencies"
+
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
+    ignore:
+      - dependency-name: "typescript"
+
+  # ⚙️ GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+
+    labels:
+      - "ci"
+      - "dependencies"
+
+    commit-message:
+      prefix: "chore(ci)"
