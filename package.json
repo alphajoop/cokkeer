@@ -5,7 +5,7 @@
   "homepage": "https://github.com/alphajoop/cokkeer",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alphajoop/cokkeer.git"
+    "url": "https://github.com/alphajoop/cokkeer.git"
   },
   "description": "Ultra-fast, zero-dependency syntax highlighter optimized for Bun & TypeScript.",
   "type": "module",
