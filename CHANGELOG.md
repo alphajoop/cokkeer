@@ -1,3 +1,9 @@
+## What's Changed
+
+### Bug Fixes
+
+* **docs:** improve README and usage examples ([73b2bc5](https://github.com/alphajoop/cokkeer/commit/73b2bc5c1c270efdcb81aad54fe924a515839d8d))
+
 # Changelog
 
 ## [1.2.1](https://github.com/alphajoop/cokkeer/compare/v1.2.0...v1.2.1) (2025-12-16)
