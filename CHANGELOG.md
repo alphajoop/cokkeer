@@ -2,6 +2,12 @@
 
 ### Bug Fixes
 
+* **ci:** reorder workflow steps in logical order ([62bae90](https://github.com/alphajoop/cokkeer/commit/62bae903b5989e8d24d5ae048e26b5e6c4850f4d))
+
+## What's Changed
+
+### Bug Fixes
+
 * **docs:** improve README and usage examples ([73b2bc5](https://github.com/alphajoop/cokkeer/commit/73b2bc5c1c270efdcb81aad54fe924a515839d8d))
 
 # Changelog
