@@ -28,31 +28,31 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      # 4️⃣ Clean dist
-      - name: Clean dist folder
-        run: bun run clean
-
-      # 5️⃣ Build TypeScript & bundle
-      - name: Build library
-        run: bun run build
-
-      # 6️⃣ Setup Biome
+      # 4️⃣ Setup Biome
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
         with:
           version: latest
 
-      # 7️⃣ Format check
+      # 5️⃣ Format check
       - name: Format code
         run: bun run format
 
-      # 8️⃣ Lint check
+      # 6️⃣ Lint check
       - name: Lint code
         run: bun run lint
 
-      # 9️⃣ Type check / static analysis
+      # 7️⃣ Type check / static analysis
       - name: Check code
         run: bun run check
+
+      # 8️⃣ Clean dist
+      - name: Clean dist folder
+        run: bun run clean
+
+      # 9️⃣ Build TypeScript & bundle
+      - name: Build library
+        run: bun run build
 
       # 🔟 Run tests
       - name: Run tests
