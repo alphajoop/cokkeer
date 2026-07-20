@@ -48,7 +48,7 @@
     "react"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.4.15",
+    "@biomejs/biome": "2.5.4",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.0",
     "@semantic-release/changelog": "^6.0.3",
